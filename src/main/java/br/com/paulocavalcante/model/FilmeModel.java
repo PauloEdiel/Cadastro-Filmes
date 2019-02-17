@@ -17,6 +17,14 @@ public class FilmeModel implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
+	private String descricao;
+	private String capa;
+
+	public FilmeModel(String nome, String descricao, String capa) {
+		this.nome = nome;
+		this.descricao = descricao;
+		this.capa = capa;
+	}
 
 	public Long getId() {
 		return id;
@@ -42,25 +50,16 @@ public class FilmeModel implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public int getCapa() {
+	public String getCapa() {
 		return capa;
 	}
 
-	public void setCapa(int capa) {
+	public void setCapa(String capa) {
 		this.capa = capa;
 	}
-
-	private String descricao;
-	private int capa;
 
 	public FilmeModel() {
 
-	}
-
-	public FilmeModel(String nome, String descricao, int capa) {
-		this.nome = nome;
-		this.descricao = descricao;
-		this.capa = capa;
 	}
 
 }
